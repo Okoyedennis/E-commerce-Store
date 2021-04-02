@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./Component/Header";
 import Home from "./Component/Home";
@@ -10,8 +10,27 @@ import Men from "./Component/Men/Men";
 import Women from "./Component/Women/Women";
 import Checkout from "./Component/Checkout/Checkout";
 import Login from "./Component/Login";
+import { useStateValue } from "./Component/StateProvider";
+import { auth } from "./Component/Firebase";
 
 function App() {
+  const [{}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+  }, []);
   return (
     <Router>
       <div>

@@ -3,9 +3,11 @@ import Subtotal from "./Subtotal";
 import "../../Style/Checkout.css";
 import CheckoutProduct from "./CheckoutProduct";
 import { useStateValue } from "../StateProvider";
+import Payment from "../Payment";
 
 const Checkout = () => {
-  const [{ basket }] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
     <div className="checkout">
       <div className="checkout__left">
@@ -27,6 +29,13 @@ const Checkout = () => {
             />
           );
         })}
+        <div className="checkout__textWarning">
+          <h4>*Please use the following text credit card for payment*</h4>
+          <h3>4242 4242 4242 4242 - Exp: 01/22 - CVW:123</h3>
+        </div>
+        <div className="checkout__payment">
+          <Payment />
+        </div>
       </div>
       <div className="checkout__right">
         <Subtotal />

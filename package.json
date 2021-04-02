@@ -12,6 +12,8 @@
     "bootstrap": "^4.5.3",
     "emailjs": "^3.4.0",
     "emailjs-com": "^2.6.4",
+    "firebase": "^8.3.1",
+    "firebase-tools": "^9.8.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-currency-format": "^1.0.0",
@@ -24,6 +26,7 @@
     "react-scripts": "4.0.0",
     "react-scroll": "^1.8.1",
     "react-slick": "^0.28.0",
+    "react-stripe-checkout": "^2.6.3",
     "react-typed": "^1.2.0",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^0.2.4"

@@ -75,11 +75,6 @@
   font-weight: bold;
 }
 
-.active {
-  /* color: #28a745; */
-  opacity: 0.6;
-}
-
 .nav__link {
   text-decoration: none;
   color: #fff;

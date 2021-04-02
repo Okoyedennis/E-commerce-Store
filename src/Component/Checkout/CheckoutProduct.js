@@ -2,6 +2,7 @@ import React from "react";
 import "../../Style/CheckoutProduct.css";
 import { useStateValue } from "../StateProvider";
 import DeleteIcon from "@material-ui/icons/Delete";
+import CurrencyFormat from "react-currency-format";
 
 const CheckoutProduct = ({ id, price, image, title, description, rating }) => {
   const [{ basket }, dispatch] = useStateValue();
@@ -24,8 +25,16 @@ const CheckoutProduct = ({ id, price, image, title, description, rating }) => {
           {title}: {truncate(description, 150)}
         </p>
         <p className="checkoutProduct__price">
-          <small>$</small>
-          <strong>{price}</strong>
+          <strong>
+            <CurrencyFormat
+              renderText={(value) => <>{value}</>}
+              decimalScale={2}
+              value={price}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={"₦"}
+            />
+          </strong>
         </p>
         <div className="checkoutProduct__rating">
           {Array(rating)
@@ -34,8 +43,8 @@ const CheckoutProduct = ({ id, price, image, title, description, rating }) => {
               return <p>⭐</p>;
             })}
         </div>
-        <button onClick={removeFromBasket}>
-          <DeleteIcon />
+        <button className="button" onClick={removeFromBasket}>
+          Remove from Basket
         </button>
       </div>
     </div>

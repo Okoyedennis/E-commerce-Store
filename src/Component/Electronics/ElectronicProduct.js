@@ -1,4 +1,5 @@
 import React from "react";
+import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../StateProvider";
 
 const ElectronicProduct = ({
@@ -35,8 +36,16 @@ const ElectronicProduct = ({
           <strong>{title}: </strong> {truncate(description, 100)}
         </p>
         <p className="product__price">
-          <small>N</small>
-          <strong>{price}</strong>
+          <strong>
+            <CurrencyFormat
+              renderText={(value) => <>{value}</>}
+              decimalScale={2}
+              value={price}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={"₦"}
+            />
+          </strong>
         </p>
         <div className="product__rating">
           {Array(rating)
