@@ -2,6 +2,7 @@ import React from "react";
 import "../Style/Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Button, Dropdown, ButtonGroup } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
@@ -73,7 +74,7 @@ const Header = () => {
       </div>
       <Link className="link" to="/checkout">
         <div className="header__optionBasket">
-          <ShoppingBasketIcon />
+          <ShoppingCartIcon />
           <span className="header__optionLineTwo header__basketCount">
             {basket?.length}
           </span>

@@ -1,0 +1,31 @@
+.footer {
+  background-color: #232f3e;
+  color: #fff;
+  height: 120%;
+}
+
+.footer__wrapper {
+  display: flex;
+  padding-top: 50px;
+}
+
+.footer__item {
+  padding: 10px;
+  flex: 1;
+  padding-left: 80px;
+}
+
+.footer__Header {
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px !important;
+  margin: 6px 0 18px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 5px;
+}

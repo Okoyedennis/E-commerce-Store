@@ -20,7 +20,7 @@ const CarouselB = () => {
     <div>
       <Carousel
         className="home__image"
-        interval={5000}
+        interval={4000}
         activeIndex={index}
         onSelect={handleSelect}
         {...settings}

@@ -12,6 +12,7 @@ import Checkout from "./Component/Checkout/Checkout";
 import Login from "./Component/Login";
 import { useStateValue } from "./Component/StateProvider";
 import { auth } from "./Component/Firebase";
+import Footer from "./Component/Footer";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -41,26 +42,32 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+            <Footer />
           </Route>
           <Route path="/women">
             <Header />
             <Women />
+            <Footer />
           </Route>
           <Route path="/men">
             <Header />
             <Men />
+            <Footer />
           </Route>
           <Route path="/jewelery">
             <Header />
             <Jewelery />
+            <Footer />
           </Route>
           <Route path="/electronics">
             <Header />
             <Electronics />
+            <Footer />
           </Route>
           <Route path="/">
             <Header />
             <Home />
+            <Footer />
           </Route>
         </Switch>
       </div>
