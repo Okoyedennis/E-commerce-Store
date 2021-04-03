@@ -3,21 +3,25 @@ import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../StateProvider";
 
 const MenProduct = ({ id, price, title, image, description, rating }) => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   const addToBasket = () => {
     // dispatch the item into the data layer
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: id,
-        title: title,
-        image: image,
-        price: price,
-        rating: rating,
-        description: description,
-      },
-    });
+    if (user === null) {
+      alert("Please Sign-In or Create Account");
+    } else {
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id: id,
+          title: title,
+          image: image,
+          price: price,
+          rating: rating,
+          description: description,
+        },
+      });
+    }
   };
 
   const truncate = (string, n) => {
